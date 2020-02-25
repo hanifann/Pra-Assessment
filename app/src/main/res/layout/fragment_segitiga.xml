@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".segitigaFragment">
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/etAlas" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:hint="@string/alas"/>
+        <Button
+                android:text="@string/hitung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btHitungS"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/etTinggi" app:layout_constraintEnd_toEndOf="@+id/etTinggi"
+                app:layout_constraintStart_toStartOf="@+id/etTinggi"/>
+        <TextView
+                android:text="@string/luas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLuass" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/btHitungS" app:layout_constraintEnd_toEndOf="@+id/btHitungS"
+                app:layout_constraintStart_toStartOf="@+id/btHitungS" tools:text="@string/luas"/>
+        <TextView
+                android:text="@string/keliling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvKelS" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvLuass" app:layout_constraintEnd_toEndOf="@+id/tvLuass"
+                app:layout_constraintStart_toStartOf="@+id/tvLuass" tools:text="@string/keliling"/>
+        <Button
+                android:text="@string/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btShare2" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvKelS" app:layout_constraintEnd_toEndOf="@+id/tvKelS"
+                app:layout_constraintStart_toStartOf="@+id/tvKelS"/>
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/etTinggi"
+                android:hint="@string/tinggi" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/etAlas"
+                app:layout_constraintEnd_toEndOf="@+id/etAlas" app:layout_constraintStart_toStartOf="@+id/etAlas"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

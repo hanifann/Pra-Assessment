@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".FragmentPersegiPanjang">
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etPanjangP" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:hint="@string/panjang"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etLebarP"
+            app:layout_constraintEnd_toEndOf="@+id/etPanjangP"
+            app:layout_constraintStart_toStartOf="@+id/etPanjangP" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/etPanjangP" android:hint="@string/lebar"/>
+    <Button
+            android:text="@string/hitung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btHitung" android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/etLebarP" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvLuasP" app:layout_constraintEnd_toEndOf="@+id/btHitung"
+            app:layout_constraintStart_toStartOf="@+id/btHitung" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" android:text="@string/luas"
+            app:layout_constraintTop_toBottomOf="@+id/btHitung" android:layout_marginTop="16dp"
+            tools:text="@string/luas"/>
+    <TextView
+            android:text="@string/keliling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvKelP" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvLuasP" app:layout_constraintEnd_toEndOf="@+id/tvLuasP"
+            app:layout_constraintStart_toStartOf="@+id/tvLuasP" tools:text="@string/keliling"/>
+    <Button
+            android:text="@string/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btShare" app:layout_constraintEnd_toEndOf="@+id/tvKelP"
+            app:layout_constraintStart_toStartOf="@+id/tvKelP" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvKelP"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
