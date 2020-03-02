@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_menuDuaFragment"
+            app:destination="@id/menuDuaFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_menuSatuFragment"
+            app:destination="@id/menuSatuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuSatuFragment"
+        android:name="com.example.myapplication.MenuSatuFragment"
+        android:label="MenuSatuFragment" />
+    <fragment
+        android:id="@+id/menuDuaFragment"
+        android:name="com.example.myapplication.MenuDuaFragment"
+        android:label="MenuDuaFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.myapplication.AboutFragment"
+        android:label="AboutFragment" />
+</navigation>

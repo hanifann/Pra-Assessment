@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ke_menu_satu">Ke Menu Satu</string>
+    <string name="ke_menu_dua">Ke Menu Dua</string>
+    <string name="pemesanan_makanan">Pemesanan Makanan</string>
+    <string name="kue">Kue</string>
+    <string name="minus">-</string>
+    <string name="_0">0</string>
+    <string name="tambah">+</string>
+    <string name="topping">Topping</string>
+    <string name="ice_cream">Ice Cream</string>
+    <string name="ceres">Ceres</string>
+    <string name="cokelat">Cokelat</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="nama">Nama</string>
+    <string name="beli">Beli</string>
+    <string name="reset">Reset</string>
+    <string name="struk_pembelian">Struk Pembelian</string>
+    <string name="share">Share</string>
+    <string name="rasa">Rasa</string>
+    <string name="jumlah">Jumlah %s</string>
+    <string name="namaKue">Kue %s</string>
+    <string name="pembeli">Rp. %s</string>
+</resources>
