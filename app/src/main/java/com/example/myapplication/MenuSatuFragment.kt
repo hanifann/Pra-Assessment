@@ -1,6 +1,8 @@
 package com.example.myapplication
 
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.FragmentMenuSatuBinding
 import kotlinx.android.synthetic.main.fragment_menu_satu.*
+import java.lang.Exception
 
 /**
  * A simple [Fragment] subclass.
@@ -67,30 +70,49 @@ class MenuSatuFragment : Fragment() {
                 binding.tvNamaKue.text = getString(R.string.namaKue,binding.rbStrawberry.text.toString())
             }
 
-            when {
-                cbCeres.isChecked -> {
-                    harga = binding.tvJumlah.text.toString().toInt() * 6000
-                    binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
-                }
-                cbIceCream.isChecked -> {
-                    harga = binding.tvJumlah.text.toString().toInt() * 7000
-                    binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
-                }
-                cbIceCream.isChecked && cbCeres.isChecked ->{
-                    harga = binding.tvJumlah.text.toString().toInt() * 8000
-                    binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
-                }
-                else -> {
-                    harga = binding.tvJumlah.text.toString().toInt() * 5000
-                    binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
-                }
+            harga = binding.tvJumlah.text.toString().toInt() * 5000
+            binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
+
+            if(binding.cbCeres.isChecked){
+                harga = binding.tvJumlah.text.toString().toInt() * 6000
+                binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
+            }
+
+            if(binding.cbIceCream.isChecked){
+                harga = binding.tvJumlah.text.toString().toInt() * 7000
+                binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
+            }
+
+            if(binding.cbIceCream.isChecked && binding.cbCeres.isChecked){
+                harga = binding.tvJumlah.text.toString().toInt() * 8000
+                binding.tvHargaKue.text = getString(R.string.pembeli,harga.toString())
             }
         }
 
         binding.btReset.setOnClickListener{
-            binding.tvJumlah.text = "0"
+            jumlah = 0
+            binding.tvJumlah.text = jumlah.toString()
             binding.radioGroup.clearCheck()
+            binding.cbIceCream.isChecked = false
+            binding.cbCeres.isChecked = false
             binding.etNama.text = null
+        }
+
+        binding.btShare.setOnClickListener {
+            view:View ->
+            val mIntent = Intent(Intent.ACTION_SEND)
+
+            mIntent.data = Uri.parse("mailto:")
+            mIntent.type = "text/plain"
+
+            mIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("hanifan@student.telkomuniversity.ac.id"))
+            mIntent.putExtra(Intent.EXTRA_SUBJECT, "Jawaban")
+            mIntent.putExtra(Intent.EXTRA_TEXT,binding.tvNama.text.toString() + "\n" + binding.tvNamaKue.text.toString() +"\n"+ binding.tvHargaKue.text.toString() )
+            try{
+                startActivity(Intent.createChooser(mIntent,"Choose email client"))
+            }catch (e: Exception){
+
+            }
         }
 
         return binding.root
